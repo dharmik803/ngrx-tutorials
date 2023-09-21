@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
+import { AppStateModel } from 'src/app/shared/store/Global/AppState.model';
 import { customIncrement } from 'src/app/shared/store/counter.actions';
 import { counterModel } from 'src/app/shared/store/counter.model';
 import { getName } from 'src/app/shared/store/counter.selector';
@@ -12,7 +13,7 @@ import { getName } from 'src/app/shared/store/counter.selector';
 })
 export class CustomCounterComponent implements OnInit {
 
-  constructor(private store: Store<{ counter: counterModel }>){
+  constructor(private store: Store<AppStateModel>){
 
   }
 

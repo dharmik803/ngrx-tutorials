@@ -1,4 +1,5 @@
 import { createAction, props } from "@ngrx/store";
+import { BlogModel } from "./Blog/blog.model";
 
 
 
