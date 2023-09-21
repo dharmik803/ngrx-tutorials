@@ -1,0 +1,20 @@
+<mat-card>
+  <mat-card-content>
+    <h1 style="color: aliceblue;">{{ name }}</h1>
+    <mat-form-field>
+      <mat-label for="">Counter Input</mat-label>
+      <input matInput [(ngModel)]="counterInput" />
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label for="">Action Type</mat-label>
+        <mat-select [(ngModel)]="actionType">
+            <mat-option value="add">Add</mat-option>
+            <mat-option value="remove">Remove</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <br />
+    <button mat-raised-button color="primary" (click)="onCustomCounter()">
+      Proceed
+    </button>
+  </mat-card-content>
+</mat-card>
