@@ -4,6 +4,7 @@ import { HomeComponent } from './components/home/home.component';
 import { CounterComponent } from './components/counter/counter.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { authGuard } from './Guard/auth.guard';
+import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },

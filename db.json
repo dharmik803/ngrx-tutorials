@@ -6,24 +6,29 @@
       "description": "The number one most unpredictable and knucklehead Ninja."
     },
     {
-      "id": 2,
-      "title": "Kakashi Hatake",
-      "description": "The copy ninja and sharingan user."
-    },
-    {
       "id": 3,
       "title": "Jiraya Sensei",
-      "description": "One of the three great legendary Shanin."
+      "description": "One of the three great Legendary Shanin."
     },
     {
       "id": 4,
       "title": "Minato Namikaze",
-      "description": "The Yellow Flash of the hidden leaf."
+      "description": "The Yellow Flash of the hidden leaf. (Fastest of All)"
     },
     {
       "id": 5,
       "title": "Itachi Uchiha",
-      "description": "The only one with illusion creation power."
+      "description": "The only one with illusion creation power. Who has the eternal Mangekyo Sharingan."
+    },
+    {
+      "id": 7,
+      "title": "Hinata Hyuga",
+      "description": "The one who is called Byakugan Princess."
+    },
+    {
+      "id": 8,
+      "title": "Kakashi Hatake",
+      "description": "The copy ninja and sharingan user of the hidden leaf village."
     }
   ]
 }

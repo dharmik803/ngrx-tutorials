@@ -19,6 +19,8 @@ import { AddblogComponent } from './components/addblog/addblog.component';
 import { EffectsModule } from '@ngrx/effects';
 import { HttpClientModule } from '@angular/common/http';
 import { BlogEffects } from './shared/store/Blog/blog.effects';
+import { AppEffects } from './shared/store/Global/app.effects';
+import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { BlogEffects } from './shared/store/Blog/blog.effects';
     CounterComponent,
     BlogComponent,
     HeaderComponent,
-    AddblogComponent
+    AddblogComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,7 @@ import { BlogEffects } from './shared/store/Blog/blog.effects';
     MaterialModule,
     HttpClientModule,
     StoreDevtoolsModule.instrument({ maxAge: false, logOnly: !isDevMode() }),
-    EffectsModule.forRoot([BlogEffects])
+    EffectsModule.forRoot([BlogEffects, AppEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,17 +1,49 @@
-<h1 style="text-align: center; margin-top: 15px;">Today's Blogs</h1>
-<div style="text-align: center;">
-    <button (click)="addBlog()" mat-raised-button color="primary">Add Blog</button>
-</div>
+<div style="text-align: center">
+  <div class="blog-container" *ngIf="!blogInfo.errormessage">
+    <h1 style="text-align: center; margin-top: 15px">Today's Blogs</h1>
+    <button (click)="addBlog()" mat-raised-button color="primary">
+      Add Blog
+    </button>
 
-<mat-card *ngFor="let item of blogList">
-    <mat-card-header>
-        <h1 style="color: azure;">{{item.title}}</h1>
-        <div style="text-align: right; width: 100%;">
-            <button (click)="editBlog(item.id)" mat-raised-button color="primary"><mat-icon fontIcon="edit"></mat-icon></button>
-            <button (click)="removeBlog(item.id)" mat-raised-button color="primary"><mat-icon fontIcon="delete"></mat-icon></button>
+    <mat-card *ngFor="let item of blogInfo.bloglist">
+      <mat-card-header>
+        <h1 style="color: azure">{{ item.title }}</h1>
+        <div style="text-align: right; width: 100%">
+          <button (click)="editBlog(item.id)" mat-raised-button color="primary">
+            <mat-icon fontIcon="edit"></mat-icon>
+          </button>
+          <button
+            (click)="removeBlog(item.id)"
+            mat-raised-button
+            color="primary"
+          >
+            <mat-icon fontIcon="delete"></mat-icon>
+          </button>
         </div>
-    </mat-card-header>
-    <mat-card-content>
-        <p style="color: chartreuse;">{{item.description}}</p>
-    </mat-card-content>
-</mat-card>
+      </mat-card-header>
+      <mat-card-content>
+        <p style="color: chartreuse">{{ item.description }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div *ngIf="blogInfo.errormessage">
+    <mat-card>
+      <mat-card-header>
+        <h1 style="color: aliceblue;">Error Occured</h1>
+      </mat-card-header>
+      <mat-card-content>
+        <p style="color: red">
+          {{ blogInfo.errormessage }}
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div *ngIf="!blogInfo.bloglist.length">
+    <mat-card>
+        <h1 style="color: aliceblue;">No Blog Found!</h1>
+    </mat-card>
+  </div>
+
+</div>

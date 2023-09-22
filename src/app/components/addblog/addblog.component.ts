@@ -6,6 +6,7 @@ import { addblog, updateblog } from 'src/app/shared/store/Blog/blog.actions';
 import { BlogModel } from 'src/app/shared/store/Blog/blog.model';
 import { getblogbyid } from 'src/app/shared/store/Blog/blog.selectors';
 import { AppStateModel } from 'src/app/shared/store/Global/AppState.model';
+import { loadspinner } from 'src/app/shared/store/Global/app.action';
 
 @Component({
   selector: 'app-addblog',
@@ -55,13 +56,20 @@ export class AddblogComponent implements OnInit {
         description: this.blogForm.value.description as string
       }
 
-      if(this.data.isedit){
-        _blogInput.id = this.blogForm.value.id as number;
-        this.store.dispatch(updateblog({ bloginput: _blogInput }));
-      } else {
-        this.store.dispatch(addblog({ bloginput: _blogInput }));
-      }
-      this.closePopUp();
+      this.store.dispatch(loadspinner({ isloaded: true }));
+      setTimeout(() => {
+        if(this.data.isedit){
+          _blogInput.id = this.blogForm.value.id as number;
+          this.store.dispatch(updateblog({ bloginput: _blogInput }));
+          console.log('is in edit mode');
+        } else {
+          this.store.dispatch(addblog({ bloginput: _blogInput }));
+          // console.log('is in add mode');
+        }
+        this.closePopUp();
+      }, 1000);
+
+      
     }
   }
 }
